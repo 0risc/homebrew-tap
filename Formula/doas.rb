@@ -11,7 +11,7 @@ class Doas < Formula
     url :stable
   end
 
-  depends_on "linux-pam" => :build if OS.linux?
+  depends_on macos
 
   def install
     if OS.mac?
@@ -27,10 +27,6 @@ class Doas < Formula
     man1.install "doasedit.8"
     bin.install "vidoas"
     man1.install "vidoas.8"
-  end
-
-  def post_install
-    uninstall "linux-pam" if OS.linux?
   end
 
   def caveats
