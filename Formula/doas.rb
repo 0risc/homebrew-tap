@@ -11,7 +11,7 @@ class Doas < Formula
     url :stable
   end
 
-  depends_on macos
+  depends_on :macos
 
   def install
     if OS.mac?
