@@ -29,6 +29,10 @@ class Doas < Formula
     man1.install "vidoas.8"
   end
 
+  def post_install
+    uninstall "linux-pam" if OS.linux?
+  end
+
   def caveats
     <<~EOS
       To complete the installation, run the following commands manually with sudo:
