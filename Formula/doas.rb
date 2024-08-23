@@ -11,8 +11,9 @@ class Doas < Formula
     url :stable
   end
 
-  depends_on "linux-pam" => :build if OS.linux?
-  uses_from_macos "libxcrypt"
+  on_linux do
+    depends_on "linux-pam" => :build
+  end
 
   def install
     if OS.mac?
